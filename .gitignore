@@ -1,0 +1,44 @@
+# Environnement Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Donnees et modeles (trop volumineux pour git)
+*.npy
+*.npz
+*.h5
+*.keras
+*.tflite
+data/
+datasets/
+
+# STM32CubeIDE
+Debug/
+Release/
+*.o
+*.d
+*.su
+*.elf
+*.bin
+*.hex
+*.map
+*.list
+
+# OS / editeurs
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# STM32CubeIDE / Eclipse workspace
+.metadata/
+.settings/
+.cproject
+.project
+RemoteSystemsTempFiles/

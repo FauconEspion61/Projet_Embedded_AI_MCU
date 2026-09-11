@@ -1,0 +1,29 @@
+# Projet Embedded AI on MCU - dependances Python
+#
+# Recreation de l'environnement (Python 3.12) :
+#   py -3 -m venv .venv
+#   .\.venv\Scripts\python.exe -m pip install --ignore-requires-python -r requirements.txt
+#
+# Le flag --ignore-requires-python est necessaire : AIfES-Converter 1.0.0
+# declare Python <3.10 alors qu'il fonctionne en 3.12.
+
+numpy
+matplotlib
+scikit-learn
+tqdm
+
+tensorflow
+
+# AIfES-Converter a ete ecrit pour Keras 2 : il utilise layer.input_shape,
+# supprime dans Keras 3. tf_keras restaure l'API Keras 2, active par la
+# variable d'environnement TF_USE_LEGACY_KERAS=1 (deja posee dans le kernel
+# Jupyter "Python (Projet EMNIST MCU)").
+tf_keras
+AIfES-Converter
+
+# AIfES-Converter importe pkg_resources, retire de setuptools 81+.
+setuptools<81
+
+# Jupyter
+ipykernel
+notebook
