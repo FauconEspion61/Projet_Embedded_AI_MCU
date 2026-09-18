@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    mlp_mnist_projet_data_params.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    2026-09-18T08:55:13+0200
+  * @date    2026-09-18T09:49:28+0200
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * Copyright (c) 2026 STMicroelectronics.
@@ -36,10 +36,10 @@
 
 
 #define AI_MLP_MNIST_PROJET_DATA_WEIGHTS_SIZES \
-  { 607528, }
-#define AI_MLP_MNIST_PROJET_DATA_WEIGHTS_SIZE         (607528)
+  { 322024, }
+#define AI_MLP_MNIST_PROJET_DATA_WEIGHTS_SIZE         (322024)
 #define AI_MLP_MNIST_PROJET_DATA_WEIGHTS_COUNT        (1)
-#define AI_MLP_MNIST_PROJET_DATA_WEIGHT_1_SIZE        (607528)
+#define AI_MLP_MNIST_PROJET_DATA_WEIGHT_1_SIZE        (322024)
 
 
 

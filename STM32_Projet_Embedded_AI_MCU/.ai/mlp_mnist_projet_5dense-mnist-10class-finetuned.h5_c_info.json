@@ -17,7 +17,7 @@
       "mpool_id": 1,
       "name": "dense_1_dense_bias_array",
       "nbits": 32,
-      "offset_start": 536576,
+      "offset_start": 268416,
       "qmn": {},
       "shape": [
         256
@@ -64,14 +64,14 @@
         "start": 0
       },
       "flags": "STAI_FLAG_WEIGHTS|STAI_FLAG_CONST|STAI_FLAG_PREALLOCATED",
-      "format": "STAI_FORMAT_LUT8_FLOAT",
+      "format": "STAI_FORMAT_LUT4_FLOAT",
       "id": 133,
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
       "name": "dense_1_dense_weights_array",
-      "nbits": 8,
-      "offset_start": 404480,
+      "nbits": 4,
+      "offset_start": 202816,
       "qmn": {},
       "shape": [
         256,
@@ -81,7 +81,7 @@
         "CH",
         "CH_IN"
       ],
-      "size_bytes": 132096
+      "size_bytes": 65600
     },
     {
       "alignment": 4,
@@ -127,7 +127,7 @@
       "mpool_id": 1,
       "name": "dense_2_dense_bias_array",
       "nbits": 32,
-      "offset_start": 571392,
+      "offset_start": 285888,
       "qmn": {},
       "shape": [
         128
@@ -174,14 +174,14 @@
         "start": 0
       },
       "flags": "STAI_FLAG_WEIGHTS|STAI_FLAG_CONST|STAI_FLAG_PREALLOCATED",
-      "format": "STAI_FORMAT_LUT8_FLOAT",
+      "format": "STAI_FORMAT_LUT4_FLOAT",
       "id": 140,
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
       "name": "dense_2_dense_weights_array",
-      "nbits": 8,
-      "offset_start": 537600,
+      "nbits": 4,
+      "offset_start": 269440,
       "qmn": {},
       "shape": [
         128,
@@ -191,7 +191,7 @@
         "CH",
         "CH_IN"
       ],
-      "size_bytes": 33792
+      "size_bytes": 16448
     },
     {
       "alignment": 4,
@@ -237,7 +237,7 @@
       "mpool_id": 1,
       "name": "dense_3_dense_bias_array",
       "nbits": 32,
-      "offset_start": 604672,
+      "offset_start": 319168,
       "qmn": {},
       "shape": [
         64
@@ -291,7 +291,7 @@
       "mpool_id": 1,
       "name": "dense_3_dense_weights_array",
       "nbits": 32,
-      "offset_start": 571904,
+      "offset_start": 286400,
       "qmn": {},
       "shape": [
         64,
@@ -347,7 +347,7 @@
       "mpool_id": 1,
       "name": "dense_4_dense_bias_array",
       "nbits": 32,
-      "offset_start": 607488,
+      "offset_start": 321984,
       "qmn": {},
       "shape": [
         10
@@ -401,7 +401,7 @@
       "mpool_id": 1,
       "name": "dense_4_dense_weights_array",
       "nbits": 32,
-      "offset_start": 604928,
+      "offset_start": 319424,
       "qmn": {},
       "shape": [
         10,
@@ -457,7 +457,7 @@
       "mpool_id": 1,
       "name": "dense_dense_bias_array",
       "nbits": 32,
-      "offset_start": 402432,
+      "offset_start": 200768,
       "qmn": {},
       "shape": [
         512
@@ -504,13 +504,13 @@
         "start": 0
       },
       "flags": "STAI_FLAG_WEIGHTS|STAI_FLAG_CONST|STAI_FLAG_PREALLOCATED",
-      "format": "STAI_FORMAT_LUT8_FLOAT",
+      "format": "STAI_FORMAT_LUT4_FLOAT",
       "id": 126,
       "intq": {},
       "is_param": true,
       "mpool_id": 1,
       "name": "dense_dense_weights_array",
-      "nbits": 8,
+      "nbits": 4,
       "offset_start": 0,
       "qmn": {},
       "shape": [
@@ -521,7 +521,7 @@
         "CH",
         "CH_IN"
       ],
-      "size_bytes": 402432
+      "size_bytes": 200768
     },
     {
       "alignment": 4,
@@ -580,44 +580,44 @@
   ],
   "environment": {
     "generated_model": {
-      "generated_time": "2026-09-18T08:55:13+0200",
+      "generated_time": "2026-09-18T09:49:28+0200",
       "model_files": [
         {
           "name": "mlp_mnist_projet_data_params.h",
-          "signature": "0x8629957dc1e27777989b20e531ce7c94"
+          "signature": "0x4024ec1d6c627a34aaf5cf77e11738b3"
         },
         {
           "name": "mlp_mnist_projet_data_params.c",
-          "signature": "0x7dd474a0eb5d1fe2df2a8fe07f8e3f22"
+          "signature": "0x11b0f083f0c2b761c1a4f5679c175b84"
         },
         {
           "name": "mlp_mnist_projet_data.h",
-          "signature": "0xb23fd73e88dd054780ca1a7bde027db7"
+          "signature": "0xff3bfc6cb846e660bb66498ac1b582a1"
         },
         {
           "name": "mlp_mnist_projet_data.c",
-          "signature": "0x2fc2edd4107487c7f4f1632cdaec05bd"
+          "signature": "0x380bda86d5d51251a5487a28b58d3743"
         },
         {
           "name": "mlp_mnist_projet_config.h",
-          "signature": "0x7e3c8c28ec8411264bcf83906d486df7"
+          "signature": "0x064e699e7ca40f14a032d638dfcbda03"
         },
         {
           "name": "mlp_mnist_projet.h",
-          "signature": "0x3ef4dfa23b7a577dba62614cf1eb6aca"
+          "signature": "0xefdacc6f16174b53738da14b8623231a"
         },
         {
           "name": "mlp_mnist_projet.c",
-          "signature": "0x54d1bf4d65abebe9f68f494e8ce984b3"
+          "signature": "0x7496afb794e9d8599828dbe6879fdcf9"
         }
       ],
       "name": "mlp_mnist_projet"
     },
-    "network_signature": "0xda7bfc1ee9798cf3",
+    "network_signature": "0xfec701eacb91b8d0",
     "test_name": "",
     "tools": [
       {
-        "arguments": "generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded Neural Network on MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression low --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace163555102018300362231477691163386 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output",
+        "arguments": "generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded Neural Network on MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression medium --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace1668089542988005074405737294977877 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output",
         "environment": [
           "STATS_TYPE=X-CUBE-AI"
         ],
@@ -1095,7 +1095,7 @@
     "toolchain": "arm-none-eabi-gcc (GNU Tools for STM32 14.3.rel1.20251027-0700) 14.3.1 20250623",
     "toolchain_flash": 736,
     "toolchain_ram": 0,
-    "weights": 607528
+    "weights": 322024
   },
   "memory_pools": [
     {
@@ -1157,7 +1157,7 @@
       "rights": "ACC_READ",
       "size_bytes": -1,
       "subpools": [],
-      "used_size_bytes": 607528,
+      "used_size_bytes": 322024,
       "user_allocated": false,
       "virtual": false
     }

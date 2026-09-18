@@ -722,6 +722,22 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+/**
+  * @brief  printf() retarget hook (see syscalls.c: _write() calls this per
+  *         character). Left as a no-op on purpose: huart2 also carries the
+  *         binary AI protocol (sync byte, input floats, output bytes) to the
+  *         PC script, and any debug text sent on the same line would corrupt
+  *         that stream. Without this definition, __io_putchar stays an
+  *         unresolved weak symbol (resolves to address 0): the very first
+  *         printf() call (in MX_X_CUBE_AI_Init) branches to address 0 and
+  *         HardFaults, freezing the board in HardFault_Handler's while(1)
+  *         before it ever reaches the main loop.
+  */
+int __io_putchar(int ch)
+{
+  return ch;
+}
+
 /* USER CODE END 4 */
 
 /**

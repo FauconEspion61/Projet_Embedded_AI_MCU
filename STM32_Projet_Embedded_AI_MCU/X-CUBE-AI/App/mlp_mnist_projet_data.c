@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    mlp_mnist_projet_data.c
   * @author  AST Embedded Analytics Research Platform
-  * @date    2026-09-18T08:55:13+0200
+  * @date    2026-09-18T09:49:28+0200
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention
@@ -26,8 +26,8 @@ ai_buffer g_mlp_mnist_projet_data_map_activations[AI_MLP_MNIST_PROJET_DATA_ACTIV
   };
 ai_buffer g_mlp_mnist_projet_data_map_weights[AI_MLP_MNIST_PROJET_DATA_WEIGHTS_COUNT] = {
   AI_BUFFER_INIT(AI_FLAG_NONE,  AI_BUFFER_FORMAT_U8,
-    AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, 607528, 1, 1),
-    607528, NULL, s_mlp_mnist_projet_weights_array_u64),   /* weights_array */
+    AI_BUFFER_SHAPE_INIT(AI_SHAPE_BCWH, 4, 1, 322024, 1, 1),
+    322024, NULL, s_mlp_mnist_projet_weights_array_u64),   /* weights_array */
   };
 
 

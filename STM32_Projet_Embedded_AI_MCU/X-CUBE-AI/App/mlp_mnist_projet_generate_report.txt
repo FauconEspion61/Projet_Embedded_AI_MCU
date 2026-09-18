@@ -1,17 +1,17 @@
 ST Edge AI Core v2.2.0-20266 2adc00962
-Created date          : 2026-09-18 08:55:14
-Parameters            : generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded Neural Network on MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression low --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace163555102018300362231477691163386 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output
+Created date          : 2026-09-18 09:49:29
+Parameters            : generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded Neural Network on MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression medium --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace1668089542988005074405737294977877 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output
 
 Exec/report summary (generate)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 model file         :   C:\Users\foltz\Documents\ISMIN\3A\Embedded_Systems\Embedded Neural Network on MCU\Projet_Embedded_AI_MCU\models\5dense-mnist-10class-finetuned.h5   
 type               :   keras                                                                                                                                               
 c_name             :   mlp_mnist_projet                                                                                                                                    
-compression        :   low                                                                                                                                                 
+compression        :   medium                                                                                                                                              
 options            :   allocate-inputs, allocate-outputs                                                                                                                   
 optimization       :   balanced                                                                                                                                            
 target/series      :   stm32l4                                                                                                                                             
-workspace dir      :   C:\Users\foltz\AppData\Local\Temp\mxAI_workspace163555102018300362231477691163386                                                                   
+workspace dir      :   C:\Users\foltz\AppData\Local\Temp\mxAI_workspace1668089542988005074405737294977877                                                                  
 output dir         :   C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output                                                                                                 
 model_fmt          :   float                                                                                                                                               
 model_name         :   node_5densemnist10classfinetuned                                                                                                                    
@@ -21,7 +21,7 @@ params #           :   575,050 items (2.19 MiB)
 input 1/1          :   'input_0', f32(1x784), 3.06 KBytes, activations                                                                                                     
 output 1/1         :   'dense_4', f32(1x10), 40 Bytes, activations                                                                                                         
 macc               :   576,160                                                                                                                                             
-weights (ro)       :   607,528 B (593.29 KiB) (1 segment) / -1,692,672(-73.6%) vs float model                                                                              
+weights (ro)       :   322,024 B (314.48 KiB) (1 segment) / -1,978,176(-86.0%) vs float model                                                                              
 activations (rw)   :   5,184 B (5.06 KiB) (1 segment) *                                                                                                                    
 ram (total)        :   5,184 B (5.06 KiB) = 5,184 + 0 + 0                                                                                                                  
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -31,14 +31,14 @@ Model name - node_5densemnist10classfinetuned
 ------ ------------------------------- ------------- ------------------- --------- --------------- --- --------------------- ------------------- ------------------------------- 
 m_id   layer (type,original)           oshape        param/size               macc    connected to   | c_size                c_macc              c_type                          
 ------ ------------------------------- ------------- ------------------- --------- --------------- --- --------------------- ------------------- ------------------------------- 
-0      input_0 (Input, None)           [b:1,c:784]                                                   | +404,480(+100.0%)     +402,432(+100.0%)   Dense_/Nonlinearity_[0, 1]      
+0      input_0 (Input, None)           [b:1,c:784]                                                   | +202,816(+100.0%)     +402,432(+100.0%)   Dense_/Nonlinearity_[0, 1]      
        dense_dense (Dense, Dense)      [b:1,c:512]   401,920/1,607,680     401,920         input_0   | -1,607,680(-100.0%)   -401,920(-100.0%)   
        dense (Nonlinearity, Dense)     [b:1,c:512]                             512     dense_dense   |                       -512(-100.0%)       
 ------ ------------------------------- ------------- ------------------- --------- --------------- --- --------------------- ------------------- ------------------------------- 
-1      dense_1_dense (Dense, Dense)    [b:1,c:256]   131,328/525,312       131,328           dense   | -392,192(-74.7%)      +256(+0.2%)         Dense_/Nonlinearity_[2, 3]      
+1      dense_1_dense (Dense, Dense)    [b:1,c:256]   131,328/525,312       131,328           dense   | -458,688(-87.3%)      +256(+0.2%)         Dense_/Nonlinearity_[2, 3]      
        dense_1 (Nonlinearity, Dense)   [b:1,c:256]                             256   dense_1_dense   |                       -256(-100.0%)       
 ------ ------------------------------- ------------- ------------------- --------- --------------- --- --------------------- ------------------- ------------------------------- 
-2      dense_2_dense (Dense, Dense)    [b:1,c:128]   32,896/131,584         32,896         dense_1   | -97,280(-73.9%)       +128(+0.4%)         Dense_/Nonlinearity_[4, 5]      
+2      dense_2_dense (Dense, Dense)    [b:1,c:128]   32,896/131,584         32,896         dense_1   | -114,624(-87.1%)      +128(+0.4%)         Dense_/Nonlinearity_[4, 5]      
        dense_2 (Nonlinearity, Dense)   [b:1,c:128]                             128   dense_2_dense   |                       -128(-100.0%)       
 ------ ------------------------------- ------------- ------------------- --------- --------------- --- --------------------- ------------------- ------------------------------- 
 3      dense_3_dense (Dense, Dense)    [b:1,c:64]    8,256/33,024            8,256         dense_2   |                       +64(+0.8%)          Dense_/Nonlinearity_[6, 7]      
@@ -47,7 +47,7 @@ m_id   layer (type,original)           oshape        param/size               ma
 4      dense_4_dense (Dense, Dense)    [b:1,c:10]    650/2,600                 650         dense_3   |                       +150(+23.1%)        Dense_/Nonlinearity_[o][8, 9]   
        dense_4 (Nonlinearity, Dense)   [b:1,c:10]                              150   dense_4_dense   |                       -150(-100.0%)       
 ------ ------------------------------- ------------- ------------------- --------- --------------- --- --------------------- ------------------- ------------------------------- 
-model/c-model: macc=576,160/576,160  weights=2,300,200/607,528 -1,692,672(-73.6%) activations=--/5,184 io=--/0
+model/c-model: macc=576,160/576,160  weights=2,300,200/322,024 -1,978,176(-86.0%) activations=--/5,184 io=--/0
 
 
 
@@ -58,7 +58,7 @@ c-name                : mlp_mnist_projet
 c-node #              : 10
 c-array #             : 21
 activations size      : 5184 (1 segment)
-weights size          : 607528 (1 segment)
+weights size          : 322024 (1 segment)
 macc                  : 576160
 inputs                : ['input_0_output']
 outputs               : ['dense_4_output']
@@ -69,11 +69,11 @@ c_id   name (*_array)          item/size       domain/mem-pool           c-type 
 ------ ----------------------- --------------- ------------------------- ------------------ --------- 
 0      dense_1_dense_bias      256/1024        weights/weights           const float                  
 1      dense_1_dense_output    256/1024        activations/**default**   float                        
-2      dense_1_dense_weights   131072/132096   weights/weights           const lut8_float             
+2      dense_1_dense_weights   131072/65600    weights/weights           const lut4_float             
 3      dense_1_output          256/1024        activations/**default**   float                        
 4      dense_2_dense_bias      128/512         weights/weights           const float                  
 5      dense_2_dense_output    128/512         activations/**default**   float                        
-6      dense_2_dense_weights   32768/33792     weights/weights           const lut8_float             
+6      dense_2_dense_weights   32768/16448     weights/weights           const lut4_float             
 7      dense_2_output          128/512         activations/**default**   float                        
 8      dense_3_dense_bias      64/256          weights/weights           const float                  
 9      dense_3_dense_output    64/256          activations/**default**   float                        
@@ -85,7 +85,7 @@ c_id   name (*_array)          item/size       domain/mem-pool           c-type 
 15     dense_4_output          10/40           activations/**default**   float              /output   
 16     dense_dense_bias        512/2048        weights/weights           const float                  
 17     dense_dense_output      512/2048        activations/**default**   float                        
-18     dense_dense_weights     401408/402432   weights/weights           const lut8_float             
+18     dense_dense_weights     401408/200768   weights/weights           const lut4_float             
 19     dense_output            512/2048        activations/**default**   float                        
 20     input_0_output          784/3136        activations/**default**   float              /input    
 ------ ----------------------- --------------- ------------------------- ------------------ --------- 
@@ -94,24 +94,24 @@ C-Layers (10)
 ------ ---------------- ---- --------------- -------- -------- -------------------------- ------------------ 
 c_id   name (*_layer)   id   layer_type      macc     rom      tensors                    shape (array id)   
 ------ ---------------- ---- --------------- -------- -------- -------------------------- ------------------ 
-0      dense_dense      0    Dense           401920   404480   I: input_0_output          f32(1x784) (20)    
-                                                               W: dense_dense_weights     c8(512x784) (18)   
+0      dense_dense      0    Dense           401920   202816   I: input_0_output          f32(1x784) (20)    
+                                                               W: dense_dense_weights     c4(512x784) (18)   
                                                                W: dense_dense_bias        f32(512) (16)      
                                                                O: dense_dense_output      f32(1x512) (17)    
 ------ ---------------- ---- --------------- -------- -------- -------------------------- ------------------ 
 1      dense            0    Nonlinearity    512      0        I: dense_dense_output      f32(1x512) (17)    
                                                                O: dense_output            f32(1x512) (19)    
 ------ ---------------- ---- --------------- -------- -------- -------------------------- ------------------ 
-2      dense_1_dense    1    Dense           131328   133120   I: dense_output            f32(1x512) (19)    
-                                                               W: dense_1_dense_weights   c8(256x512) (2)    
+2      dense_1_dense    1    Dense           131328   66624    I: dense_output            f32(1x512) (19)    
+                                                               W: dense_1_dense_weights   c4(256x512) (2)    
                                                                W: dense_1_dense_bias      f32(256) (0)       
                                                                O: dense_1_dense_output    f32(1x256) (1)     
 ------ ---------------- ---- --------------- -------- -------- -------------------------- ------------------ 
 3      dense_1          1    Nonlinearity    256      0        I: dense_1_dense_output    f32(1x256) (1)     
                                                                O: dense_1_output          f32(1x256) (3)     
 ------ ---------------- ---- --------------- -------- -------- -------------------------- ------------------ 
-4      dense_2_dense    2    Dense           32896    34304    I: dense_1_output          f32(1x256) (3)     
-                                                               W: dense_2_dense_weights   c8(128x256) (6)    
+4      dense_2_dense    2    Dense           32896    16960    I: dense_1_output          f32(1x256) (3)     
+                                                               W: dense_2_dense_weights   c4(128x256) (6)    
                                                                W: dense_2_dense_bias      f32(128) (4)       
                                                                O: dense_2_dense_output    f32(1x128) (5)     
 ------ ---------------- ---- --------------- -------- -------- -------------------------- ------------------ 
@@ -141,11 +141,11 @@ Number of operations per c-layer
 ------- ------ ------------------------ --------- -------------- 
 c_id    m_id   name (type)                    #op           type 
 ------- ------ ------------------------ --------- -------------- 
-0       0      dense_dense (Dense)        401,920    smul_f32_f8 
+0       0      dense_dense (Dense)        401,920    smul_f32_f4 
 1       0      dense (Nonlinearity)           512     op_f32_f32 
-2       1      dense_1_dense (Dense)      131,328    smul_f32_f8 
+2       1      dense_1_dense (Dense)      131,328    smul_f32_f4 
 3       1      dense_1 (Nonlinearity)         256     op_f32_f32 
-4       2      dense_2_dense (Dense)       32,896    smul_f32_f8 
+4       2      dense_2_dense (Dense)       32,896    smul_f32_f4 
 5       2      dense_2 (Nonlinearity)         128     op_f32_f32 
 6       3      dense_3_dense (Dense)        8,256   smul_f32_f32 
 7       3      dense_3 (Nonlinearity)          64     op_f32_f32 
@@ -158,7 +158,7 @@ Number of operation types
 ---------------- --------- ----------- 
 operation type           #           % 
 ---------------- --------- ----------- 
-smul_f32_f8        566,144       98.3% 
+smul_f32_f4        566,144       98.3% 
 op_f32_f32           1,110        0.2% 
 smul_f32_f32         8,906        1.5% 
 
@@ -166,13 +166,13 @@ Complexity report (model)
 ------ --------------- ------------------------- ------------------------- -------- 
 m_id   name            c_macc                    c_rom                     c_id     
 ------ --------------- ------------------------- ------------------------- -------- 
-0      input_0         ||||||||||||||||  69.8%   ||||||||||||||||  66.6%   [0, 1]   
-1      dense_1_dense   |||||             22.8%   |||||             21.9%   [2, 3]   
-2      dense_2_dense   ||                 5.7%   ||                 5.6%   [4, 5]   
-3      dense_3_dense   |                  1.4%   ||                 5.4%   [6, 7]   
-4      dense_4_dense   |                  0.1%   |                  0.4%   [8, 9]   
+0      input_0         ||||||||||||||||  69.8%   ||||||||||||||||  63.0%   [0, 1]   
+1      dense_1_dense   |||||             22.8%   |||||             20.7%   [2, 3]   
+2      dense_2_dense   ||                 5.7%   ||                 5.3%   [4, 5]   
+3      dense_3_dense   |                  1.4%   |||               10.3%   [6, 7]   
+4      dense_4_dense   |                  0.1%   |                  0.8%   [8, 9]   
 ------ --------------- ------------------------- ------------------------- -------- 
-macc=576,160 weights=607,528 act=5,184 ram_io=0
+macc=576,160 weights=322,024 act=5,184 ram_io=0
  
  Requested memory size by section - "stm32l4" target
  ------------------------------ ------- --------- ------- ------- 
@@ -185,11 +185,11 @@ macc=576,160 weights=607,528 act=5,184 ram_io=0
  ------------------------------ ------- --------- ------- ------- 
  RT total**                       8,392       120   2,808     172 
  ------------------------------ ------- --------- ------- ------- 
- weights                              0   607,528       0       0 
+ weights                              0   322,024       0       0 
  activations                          0         0       0   5,184 
  io                                   0         0       0       0 
  ------------------------------ ------- --------- ------- ------- 
- TOTAL                            8,392   607,648   2,808   5,356 
+ TOTAL                            8,392   322,144   2,808   5,356 
  ------------------------------ ------- --------- ------- ------- 
  *  toolchain objects (libm/libgcc*)
  ** RT AI runtime objects (kernels+infrastructure)
@@ -198,9 +198,9 @@ macc=576,160 weights=607,528 act=5,184 ram_io=0
   --------------------------------------------------
                FLASH (ro)     %*   RAM (rw)       % 
   --------------------------------------------------
-  RT total         11,320   1.8%      2,980   36.5% 
+  RT total         11,320   3.4%      2,980   36.5% 
   --------------------------------------------------
-  TOTAL           618,848             8,164         
+  TOTAL           333,344             8,164         
   --------------------------------------------------
   *  rt/total
 

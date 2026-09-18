@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    mlp_mnist_projet_data.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    2026-09-18T08:55:13+0200
+  * @date    2026-09-18T09:49:28+0200
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * Copyright (c) 2026 STMicroelectronics.
@@ -32,7 +32,7 @@ AI_DEPRECATED
 AI_API_DECLARE_BEGIN
 
 
-extern const ai_u64 s_mlp_mnist_projet_weights_array_u64[75941];
+extern const ai_u64 s_mlp_mnist_projet_weights_array_u64[40253];
 
 
 
