@@ -2,7 +2,7 @@
   ******************************************************************************
   * @file    mlp_mnist_projet.h
   * @author  AST Embedded Analytics Research Platform
-  * @date    2026-09-11T11:54:14+0200
+  * @date    2026-09-18T08:55:13+0200
   * @brief   AI Tool Automatic Code Generator for Embedded NN computing
   ******************************************************************************
   * @attention

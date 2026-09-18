@@ -1,6 +1,6 @@
 ST Edge AI Core v2.2.0-20266 2adc00962
-Created date          : 2026-09-11 11:54:16
-Parameters            : generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded Neural Network on MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression low --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace15692261089630015806496552810702598 --output C:/Users/foltz/.stm32cubemx/network_output
+Created date          : 2026-09-18 08:55:14
+Parameters            : generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded Neural Network on MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression low --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace163555102018300362231477691163386 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output
 
 Exec/report summary (generate)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -11,8 +11,8 @@ compression        :   low
 options            :   allocate-inputs, allocate-outputs                                                                                                                   
 optimization       :   balanced                                                                                                                                            
 target/series      :   stm32l4                                                                                                                                             
-workspace dir      :   C:\Users\foltz\AppData\Local\Temp\mxAI_workspace15692261089630015806496552810702598                                                                 
-output dir         :   C:\Users\foltz\.stm32cubemx\network_output                                                                                                          
+workspace dir      :   C:\Users\foltz\AppData\Local\Temp\mxAI_workspace163555102018300362231477691163386                                                                   
+output dir         :   C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output                                                                                                 
 model_fmt          :   float                                                                                                                                               
 model_name         :   node_5densemnist10classfinetuned                                                                                                                    
 model_hash         :   0xd8396cf0cf11a377491ff7cd45c7db15                                                                                                                  
@@ -206,11 +206,11 @@ macc=576,160 weights=607,528 act=5,184 ram_io=0
 
 
 Generated files (7)
---------------------------------------------------------------------------- 
-C:\Users\foltz\.stm32cubemx\network_output\mlp_mnist_projet_data_params.h   
-C:\Users\foltz\.stm32cubemx\network_output\mlp_mnist_projet_data_params.c   
-C:\Users\foltz\.stm32cubemx\network_output\mlp_mnist_projet_data.h          
-C:\Users\foltz\.stm32cubemx\network_output\mlp_mnist_projet_data.c          
-C:\Users\foltz\.stm32cubemx\network_output\mlp_mnist_projet_config.h        
-C:\Users\foltz\.stm32cubemx\network_output\mlp_mnist_projet.h               
-C:\Users\foltz\.stm32cubemx\network_output\mlp_mnist_projet.c               
+------------------------------------------------------------------------------------ 
+C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output\mlp_mnist_projet_data_params.h   
+C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output\mlp_mnist_projet_data_params.c   
+C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output\mlp_mnist_projet_data.h          
+C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output\mlp_mnist_projet_data.c          
+C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output\mlp_mnist_projet_config.h        
+C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output\mlp_mnist_projet.h               
+C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output\mlp_mnist_projet.c               
