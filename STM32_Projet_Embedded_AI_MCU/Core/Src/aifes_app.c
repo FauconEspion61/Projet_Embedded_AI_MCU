@@ -9,7 +9,7 @@
 #include "main.h"
 #include <stdint.h>
 #include <stdlib.h>
-#include "aifes_f32_fnn.h"      /* UNIQUEMENT dans ce fichier : le header contient des definitions */
+#include "aifes_q7_fnn.h"      /* UNIQUEMENT dans ce fichier : le header contient des definitions */
 
 extern UART_HandleTypeDef huart2;
 
@@ -22,7 +22,7 @@ static float output_data[OUTPUTS];   /* 10 probabilites */
 
 void AIfES_Init(void)
 {
-  if (aifes_f32_fnn_create_model() != 0)
+  if (aifes_q7_fnn_create_model() != 0)
   {
     Error_Handler();
   }
@@ -53,7 +53,7 @@ void AIfES_Process(void)
       continue;
     }
 
-    aifes_f32_fnn_inference(input_data, output_data);
+    aifes_q7_fnn_inference(input_data, output_data);
 
     for (int i = 0; i < OUTPUTS; i++)
     {

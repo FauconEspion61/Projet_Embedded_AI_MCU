@@ -38,7 +38,4 @@ Thumbs.db
 
 # STM32CubeIDE / Eclipse workspace
 .metadata/
-.settings/
-.cproject
-.project
 RemoteSystemsTempFiles/

@@ -11,7 +11,7 @@
   You first need to initialize the model once with:
   ---------------------------------------------------------------------------
     uint8_t error;
-    error = aifes_f32_fnn_create_model();
+    error = aifes_q7_fnn_create_model();
     if (error == 1)
     {
         //do something for error handling
@@ -25,9 +25,8 @@
     float input_data[784]; // AIfES input data
     float output_data[10]; // AIfES output data
 
-    aifes_f32_fnn_inference((float*) input_data, (float*) output_data);
+    aifes_q7_fnn_inference((float*) input_data, (float*) output_data);
   ---------------------------------------------------------------------------
-
 
   Copyright (C) 2022  Fraunhofer Institute for Microelectronic Circuits and Systems.
   All rights reserved.
@@ -41,14 +40,13 @@
   GNU Affero General Public License for more details.
   You should have received a copy of the GNU Affero General Public License
   along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 */
 
 #include <aifes.h>
-#include "aifes_f32_weights.h"
+#include "aifes_q7_weights.h"
 
-#ifndef AIFES_F32_FNN
-#define AIFES_F32_FNN
+#ifndef AIFES_Q7_FNN
+#define AIFES_Q7_FNN
 
 #define DATASETS 1
 #define INPUTS  784
@@ -59,43 +57,42 @@ aimodel_t model;
 // Layer definition
 uint16_t input_layer_shape[] = {DATASETS, INPUTS};
 
-ailayer_input_f32_t		input_layer	= AILAYER_INPUT_F32_A(2, input_layer_shape);
-ailayer_dense_f32_t		dense_layer_1	= AILAYER_DENSE_F32_A(512);
-ailayer_relu_f32_t		relu_layer_1	= AILAYER_RELU_F32_A();
-ailayer_dense_f32_t		dense_layer_2	= AILAYER_DENSE_F32_A(256);
-ailayer_relu_f32_t		relu_layer_2	= AILAYER_RELU_F32_A();
-ailayer_dense_f32_t		dense_layer_3	= AILAYER_DENSE_F32_A(128);
-ailayer_relu_f32_t		relu_layer_3	= AILAYER_RELU_F32_A();
-ailayer_dense_f32_t		dense_layer_4	= AILAYER_DENSE_F32_A(64);
-ailayer_relu_f32_t		relu_layer_4	= AILAYER_RELU_F32_A();
-ailayer_dense_f32_t		dense_layer_5	= AILAYER_DENSE_F32_A(10);
-ailayer_softmax_f32_t		softmax_layer_5	= AILAYER_SOFTMAX_F32_A();
+ailayer_input_q7_t		input_layer	= AILAYER_INPUT_Q7_A(2, input_layer_shape);
+ailayer_dense_q7_t		dense_layer_1	= AILAYER_DENSE_Q7_A(512);
+ailayer_relu_q7_t		relu_layer_1	= AILAYER_RELU_Q7_A();
+ailayer_dense_q7_t		dense_layer_2	= AILAYER_DENSE_Q7_A(256);
+ailayer_relu_q7_t		relu_layer_2	= AILAYER_RELU_Q7_A();
+ailayer_dense_q7_t		dense_layer_3	= AILAYER_DENSE_Q7_A(128);
+ailayer_relu_q7_t		relu_layer_3	= AILAYER_RELU_Q7_A();
+ailayer_dense_q7_t		dense_layer_4	= AILAYER_DENSE_Q7_A(64);
+ailayer_relu_q7_t		relu_layer_4	= AILAYER_RELU_Q7_A();
+ailayer_dense_q7_t		dense_layer_5	= AILAYER_DENSE_Q7_A(10);
+ailayer_softmax_q7_t		softmax_layer_5	= AILAYER_SOFTMAX_Q7_A();
 
 
 uint16_t output_layer_shape[] = {DATASETS, OUTPUTS};
 
-uint8_t aifes_f32_fnn_create_model()
+uint8_t aifes_q7_fnn_create_model()
 {
   ailayer_t *x;
 
-  model.input_layer = ailayer_input_f32_default(&input_layer);
-  x = ailayer_dense_f32_default(&dense_layer_1, model.input_layer);
-  x = ailayer_relu_f32_default(&relu_layer_1, x);
-  x = ailayer_dense_f32_default(&dense_layer_2, x);
-  x = ailayer_relu_f32_default(&relu_layer_2, x);
-  x = ailayer_dense_f32_default(&dense_layer_3, x);
-  x = ailayer_relu_f32_default(&relu_layer_3, x);
-  x = ailayer_dense_f32_default(&dense_layer_4, x);
-  x = ailayer_relu_f32_default(&relu_layer_4, x);
-  x = ailayer_dense_f32_default(&dense_layer_5, x);
-  x = ailayer_softmax_f32_default(&softmax_layer_5, x);
+  model.input_layer = ailayer_input_q7_default(&input_layer);
+  x = ailayer_dense_wt_q7_default(&dense_layer_1, model.input_layer);
+  x = ailayer_relu_q7_default(&relu_layer_1, x);
+  x = ailayer_dense_wt_q7_default(&dense_layer_2, x);
+  x = ailayer_relu_q7_default(&relu_layer_2, x);
+  x = ailayer_dense_wt_q7_default(&dense_layer_3, x);
+  x = ailayer_relu_q7_default(&relu_layer_3, x);
+  x = ailayer_dense_wt_q7_default(&dense_layer_4, x);
+  x = ailayer_relu_q7_default(&relu_layer_4, x);
+  x = ailayer_dense_wt_q7_default(&dense_layer_5, x);
+  x = ailayer_softmax_q7_default(&softmax_layer_5, x);
   model.output_layer = x;
 
   aialgo_compile_model(&model); // Compile the AIfES model
 
-  uint32_t parameter_memory_size = aialgo_sizeof_parameter_memory(&model);
 
-  aialgo_distribute_parameter_memory(&model, (void*) aifes_f32_flat_weights, parameter_memory_size);
+  aialgo_distribute_parameter_memory(&model, (void*) model_parameters, parameter_memory_size);
 
   uint32_t memory_size = aialgo_sizeof_inference_memory(&model);
 
@@ -117,20 +114,37 @@ uint8_t aifes_f32_fnn_create_model()
   // uint8_t memory_array[SIZE_OF_PRINTF];
   // uint8_t *memory_ptr= memory_array
 
+
   aialgo_schedule_inference_memory(&model, memory_ptr, memory_size);
   return 0;
-
 }
 
-void aifes_f32_fnn_inference(float* input_data, float* output_data)
+void aifes_q7_fnn_inference(float* input_data, float* output_data)
 {
 
-  aitensor_t input_tensor = AITENSOR_2D_F32(input_layer_shape, input_data);
+  // F32 tensor that has to be quantized
+  aitensor_t in_f32 = AITENSOR_2D_F32(input_layer_shape, input_data);
 
-  // Definition of the output shape
-  aitensor_t output_tensor = AITENSOR_2D_F32(output_layer_shape, output_data);
+  // Automatically quantized Q7 tensor to feed into the neural network
+  aimath_q7_params_t in_q_params = { .shift = 7, .zero_point = 0};
+  int8_t in_data[784];
+  aitensor_t in = AITENSOR_2D_Q7(input_layer_shape, &in_q_params, in_data);
 
-  aialgo_inference_model(&model, &input_tensor, &output_tensor);
+  aimath_q7_quantize_tensor_from_f32(&in_f32, &in); // Quantize the F32 tensor and write the results to the Q7 tensor
+
+  // Definition of the output shape and tensor
+  aimath_q7_params_t out_q_params;
+  int8_t out_data[10];
+  aitensor_t output_tensor = AITENSOR_2D_Q7(output_layer_shape, &out_q_params, out_data);
+
+  aialgo_inference_model(&model, &in, &output_tensor);
+
+  // Convert output tensor of Q7 to float
+  for (uint32_t i=0; i < 10; i++)
+  {
+    output_data[i] = Q7_TO_FLOAT(out_data[i], out_q_params.shift, out_q_params.zero_point);
+  }
+
 
 }
 
