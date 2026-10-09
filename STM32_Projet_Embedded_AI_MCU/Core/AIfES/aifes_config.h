@@ -56,7 +56,7 @@
 #define AIFES_ALIGN_INTEGER(variable, alignment)  while(variable % alignment != 0) variable ++		/** Define the code to align a variable in memory (e.g. a pointer) to the given size */
 
 // Switched on automatically when <Arduino.h> is available
-//#define AIDEBUG_ENABLE_PRINTING /**< Enable printing to the console (switch off to save memory) */
+#define AIDEBUG_ENABLE_PRINTING /**< Enable printing to the console (switch off to save memory) */
 
 #ifdef AIDEBUG_ENABLE_PRINTING
 
