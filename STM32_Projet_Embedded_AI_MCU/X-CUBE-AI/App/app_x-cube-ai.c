@@ -73,39 +73,6 @@
  void synchronize_UART(void);
 /* USER CODE END includes */
 
- void synchronize_UART(void)
-
- {
-
-     bool is_synced = 0;
-
-     unsigned char rx[2] = {0};
-
-     unsigned char tx[2] = {ACKNOWLEDGE, 0};
-
-     while (!is_synced)
-
-     {
-
-       HAL_UART_Receive(&huart2, (uint8_t *)rx, sizeof(rx), TIMEOUT);
-
-       if (rx[0] == SYNCHRONISATION)
-
-       {
-
-         HAL_UART_Transmit(&huart2, (uint8_t *)tx, sizeof(tx), TIMEOUT);
-
-         is_synced = 1;
-
-       }
-
-     }
-
-     return;
-
- }
-
-
 /* IO buffers ----------------------------------------------------------------*/
 
 #if !defined(AI_MLP_MNIST_PROJET_INPUTS_IN_ACTIVATIONS)
@@ -215,6 +182,29 @@ static int ai_run(void)
 }
 
 /* USER CODE BEGIN 2 */
+
+void synchronize_UART(void)
+{
+  bool is_synced = 0;
+
+  unsigned char rx[2] = {0};
+
+  unsigned char tx[2] = {ACKNOWLEDGE, 0};
+
+  while (!is_synced)
+  {
+    HAL_UART_Receive(&huart2, (uint8_t *)rx, sizeof(rx), TIMEOUT);
+
+    if (rx[0] == SYNCHRONISATION)
+    {
+      HAL_UART_Transmit(&huart2, (uint8_t *)tx, sizeof(tx), TIMEOUT);
+
+      is_synced = 1;
+    }
+  }
+
+  return;
+}
 
 
 

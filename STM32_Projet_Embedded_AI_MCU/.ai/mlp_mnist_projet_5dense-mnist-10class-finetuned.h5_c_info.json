@@ -580,44 +580,44 @@
   ],
   "environment": {
     "generated_model": {
-      "generated_time": "2026-10-09T09:47:52+0200",
+      "generated_time": "2026-10-09T10:04:06+0200",
       "model_files": [
         {
           "name": "mlp_mnist_projet_data_params.h",
-          "signature": "0x62a694ede2e7f35cfec80a21c3cf98b2"
+          "signature": "0x7843241d3050e94fa4c6bca9fb70dc90"
         },
         {
           "name": "mlp_mnist_projet_data_params.c",
-          "signature": "0x5af9f8c414c7a464bc5ecbf8e0f16069"
+          "signature": "0xd478e334742d470170668a5e6e59c48d"
         },
         {
           "name": "mlp_mnist_projet_data.h",
-          "signature": "0x26b80eb40c4eccb92fa9d614bf5188a7"
+          "signature": "0x4eb4dfccb5b120dea778d33c8f4692b6"
         },
         {
           "name": "mlp_mnist_projet_data.c",
-          "signature": "0x54431852fdd372c7d6fb56d463cb5f1e"
+          "signature": "0xb60843a5b0d69ed39c95c80a0e186d86"
         },
         {
           "name": "mlp_mnist_projet_config.h",
-          "signature": "0xd21cd3c7be8ed3a3bfe8f507421c5978"
+          "signature": "0xdb38799baf463f4889e84c05866364e6"
         },
         {
           "name": "mlp_mnist_projet.h",
-          "signature": "0xd78984d200be5014d4b8f90ccbdfc781"
+          "signature": "0xa0f85779ffb2c850f233fe88bb9fdece"
         },
         {
           "name": "mlp_mnist_projet.c",
-          "signature": "0x5aae1927e8717ab25231caae4b558a85"
+          "signature": "0xd1c68ef9aa6a55cb913a8a07ef829dbd"
         }
       ],
       "name": "mlp_mnist_projet"
     },
-    "network_signature": "0x41fc912b579591cf",
+    "network_signature": "0x1a7146321d305633",
     "test_name": "",
     "tools": [
       {
-        "arguments": "analyze --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded_Neural_Network_on_MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression medium --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace59999607661050012467031681405239554 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output",
+        "arguments": "generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded_Neural_Network_on_MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression medium --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace6010566572345008678455864484837334 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output",
         "environment": [
           "STATS_TYPE=X-CUBE-AI"
         ],

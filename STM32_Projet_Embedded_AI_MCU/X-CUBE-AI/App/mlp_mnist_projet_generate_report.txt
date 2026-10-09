@@ -1,17 +1,17 @@
 ST Edge AI Core v2.2.0-20266 2adc00962
-Created date          : 2026-09-18 09:49:29
-Parameters            : generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded Neural Network on MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression medium --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace1668089542988005074405737294977877 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output
+Created date          : 2026-10-09 10:04:08
+Parameters            : generate --target stm32l4 --name mlp_mnist_projet -m C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/Embedded_Neural_Network_on_MCU/Projet_Embedded_AI_MCU/models/5dense-mnist-10class-finetuned.h5 --compression medium --verbosity 1 --workspace C:/Users/foltz/AppData/Local/Temp/mxAI_workspace6010566572345008678455864484837334 --output C:/Users/foltz/.stm32cubemx/mlp_mnist_projet_output
 
 Exec/report summary (generate)
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-model file         :   C:\Users\foltz\Documents\ISMIN\3A\Embedded_Systems\Embedded Neural Network on MCU\Projet_Embedded_AI_MCU\models\5dense-mnist-10class-finetuned.h5   
+model file         :   C:\Users\foltz\Documents\ISMIN\3A\Embedded_Systems\Embedded_Neural_Network_on_MCU\Projet_Embedded_AI_MCU\models\5dense-mnist-10class-finetuned.h5   
 type               :   keras                                                                                                                                               
 c_name             :   mlp_mnist_projet                                                                                                                                    
 compression        :   medium                                                                                                                                              
 options            :   allocate-inputs, allocate-outputs                                                                                                                   
 optimization       :   balanced                                                                                                                                            
 target/series      :   stm32l4                                                                                                                                             
-workspace dir      :   C:\Users\foltz\AppData\Local\Temp\mxAI_workspace1668089542988005074405737294977877                                                                  
+workspace dir      :   C:\Users\foltz\AppData\Local\Temp\mxAI_workspace6010566572345008678455864484837334                                                                  
 output dir         :   C:\Users\foltz\.stm32cubemx\mlp_mnist_projet_output                                                                                                 
 model_fmt          :   float                                                                                                                                               
 model_name         :   node_5densemnist10classfinetuned                                                                                                                    
