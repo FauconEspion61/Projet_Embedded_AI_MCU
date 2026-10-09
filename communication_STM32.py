@@ -1,8 +1,13 @@
+import os
 import serial
 import numpy as np
-import tensorflow as tf
 
 PORT = "COM7"
+
+# Fichier MNIST au format Keras (cles x_train, y_train, x_test, y_test). Keras le
+# telecharge ici au premier appel de mnist.load_data(). Le lire directement evite
+# d'importer TensorFlow (~13 s) juste pour recuperer les images de test.
+MNIST_NPZ = os.path.expanduser("~/.keras/datasets/mnist.npz")
 
 
 def load_test_set():
@@ -22,7 +27,13 @@ def load_test_set():
         tuple: (X_test, Y_test) - images aplaties en (N, 784) float32 dans
         [-0.5, 0.5], labels en one-hot (N, 10).
     """
-    (_, _), (x_raw, y_raw) = tf.keras.datasets.mnist.load_data()
+    if os.path.exists(MNIST_NPZ):
+        with np.load(MNIST_NPZ) as data:
+            x_raw, y_raw = data["x_test"], data["y_test"]
+    else:
+        # Premier lancement : Keras telecharge le fichier (import lent, une seule fois).
+        import tensorflow as tf
+        (_, _), (x_raw, y_raw) = tf.keras.datasets.mnist.load_data()
     x_test = ((x_raw / 255) - 0.5).astype(np.float32).reshape(x_raw.shape[0], -1)
     y_test = np.eye(10)[y_raw].astype(np.float32)
     return x_test, y_test
