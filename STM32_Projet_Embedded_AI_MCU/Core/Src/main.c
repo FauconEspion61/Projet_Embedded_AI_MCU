@@ -66,7 +66,8 @@ static void MX_SPI2_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_USART3_UART_Init(void);
 /* USER CODE BEGIN PFP */
-
+void AIfES_Init(void);
+void AIfES_Process(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -111,6 +112,8 @@ int main(void)
   MX_USART3_UART_Init();
   MX_X_CUBE_AI_Init();
   /* USER CODE BEGIN 2 */
+  AIfES_Init();
+  AIfES_Process(); //ne rend jamais la main donc pas besoin de rentrer dans le while, la focntion contient sa propre boucle infinie
 
   /* USER CODE END 2 */
 
