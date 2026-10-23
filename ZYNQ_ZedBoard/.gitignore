@@ -1,0 +1,32 @@
+# Fichiers generes par Vivado / Vitis : ne se versionnent pas.
+# On versionne les SOURCES (Tcl, RTL, contraintes, IP, code C) et le .xsa exporte.
+
+# Projets Vivado : recrees par un script Tcl, jamais commites tels quels
+# (centaines de Mo, chemins absolus propres a la machine).
+hw/vivado/
+**/*.cache/
+**/*.gen/
+**/*.runs/
+**/*.sim/
+**/*.hw/
+**/*.ip_user_files/
+**/*.srcs/sim_1/
+.Xil/
+**/.Xil/
+
+# Journaux et fichiers de reprise
+*.jou
+*.backup.jou
+*.backup.log
+vivado*.log
+vivado*.jou
+vitis*.log
+hs_err_pid*
+*.str
+webtalk*
+
+# Bitstream et binaires : reproductibles. Pour livrer un bitstream final,
+# le forcer explicitement avec : git add -f chemin/vers/fichier.bit
+*.bit
+*.bin
+*.elf
