@@ -17,6 +17,21 @@ hs_err_pid*
 /vivado/vivado_pid*.str
 /vivado/webtalk*
 
+# ---- Vitis ------------------------------------------------------------------
+# Versionne : le composant AIfES_component (code, UserConfig.cmake, copie de la
+# bibliotheque AIfES, configuration de lancement).
+# Non versionne : ce que Vitis regenere et qui contient des chemins absolus propres
+# a la machine (V:/..., C:/Users/...), donc inutilisable ailleurs :
+#   - la plateforme AIfES_platform, recreee a partir de vivado/AIfES_wrapper.xsa
+#   - les compile_commands.json et app.yaml, les caches
+#   - les fichiers de session de l'IDE (vitis/_ide/ : nom d'utilisateur, port local, journaux)
+vitis/AIfES_platform/
+vitis/**/.cache/
+vitis/**/compile_commands.json
+vitis/AIfES_component/src/app.yaml
+vitis/_ide/
+vitis/.rigel_lopper/
+
 # Le .gitignore de la racine ecarte des extensions pensees pour STM32CubeIDE
 # (*.bin, *.map, *.o, *.d, *.list, *.hex, data/). Un projet Vivado peut en
 # produire (bitstream .bin, fichiers memoire .hex...) : on les reinclut ici.
