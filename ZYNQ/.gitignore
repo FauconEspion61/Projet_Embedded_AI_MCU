@@ -1,0 +1,30 @@
+# Le projet Vivado (ZYNQ/vivado/) est versionne EN ENTIER, pour pouvoir etre
+# ouvert et relu tel quel : .xpr, sources, block design, .gen, .cache, .runs
+# (rapports, bitstream), simulation... Ne sont exclus que les fichiers
+# temporaires ou propres a une session de travail.
+
+# Dossiers temporaires de Vivado et verrous
+.Xil/
+*.lck
+hs_err_pid*
+
+# Journaux de SESSION (ecrits a la racine de vivado/ quand Vivado y est lance).
+# Ancres a vivado/ : les journaux et logs des dossiers .runs/ font partie du
+# projet et restent suivis.
+/vivado/vivado*.jou
+/vivado/vivado*.log
+/vivado/vivado*.backup.*
+/vivado/vivado_pid*.str
+/vivado/webtalk*
+
+# Le .gitignore de la racine ecarte des extensions pensees pour STM32CubeIDE
+# (*.bin, *.map, *.o, *.d, *.list, *.hex, data/). Un projet Vivado peut en
+# produire (bitstream .bin, fichiers memoire .hex...) : on les reinclut ici.
+!*.bin
+!*.hex
+!*.map
+!*.list
+!*.o
+!*.d
+!data/
+!datasets/

@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Fri Nov  6 13:52:54 2026
+# Process ID         : 45920
+# Current directory  : C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/CoDesign_and_FPGA_prototyping/Projet_Codesign/Projet_Codesign.runs/system_processing_system7_0_0_synth_1
+# Command line       : vivado.exe -log system_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_processing_system7_0_0.tcl
+# Log file           : C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/CoDesign_and_FPGA_prototyping/Projet_Codesign/Projet_Codesign.runs/system_processing_system7_0_0_synth_1/system_processing_system7_0_0.vds
+# Journal file       : C:/Users/foltz/Documents/ISMIN/3A/Embedded_Systems/CoDesign_and_FPGA_prototyping/Projet_Codesign/Projet_Codesign.runs/system_processing_system7_0_0_synth_1\vivado.jou
+# Running On         : Portable_Paul
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : Intel(R) Core(TM) Ultra 9 275HX
+# CPU Frequency      : 3072 MHz
+# CPU Physical cores : 24
+# CPU Logical cores  : 24
+# Host memory        : 33752 MB
+# Swap memory        : 12348 MB
+# Total Virtual      : 46101 MB
+# Available Virtual  : 12861 MB
+#-----------------------------------------------------------
+source system_processing_system7_0_0.tcl -notrace
