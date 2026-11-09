@@ -11,7 +11,9 @@ uint32_t time_now_us(void)
 {
     XTime t;
     XTime_GetTime(&t);
-    return (uint32_t)((t * 1000000ULL) / COUNTS_PER_SECOND);
+    /* Parentheses obligatoires : le BSP definit COUNTS_PER_SECOND comme "XPAR_CPU_CORE_CLOCK_FREQ_HZ/2"
+     * SANS parentheses, donc "a / COUNTS_PER_SECOND" se developperait en "a / freq / 2". */
+    return (uint32_t)((t * 1000000ULL) / (COUNTS_PER_SECOND));
 }
 
 int uart_rx_pending(void)

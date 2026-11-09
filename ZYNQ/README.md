@@ -79,9 +79,15 @@ Synchronisation sur COM11 ...
 Synchronise. Envoi de 100 images ...
     100/100  precision courante  98.0 %
 Precision      : 98.00 %  (100 images)
-Inference carte: moyenne 1226 us, min 1225 us, max 1235 us
+Inference carte: (valeur erronée, à refaire : voir la note ci-dessous)
 Debit global   : 3.6 images/s  (27.9 s au total, dominees par le transfert UART)
 ```
+
+**Attention : le temps d'inférence de 1226 µs obtenu au premier essai était faux.** La conversion en
+microsecondes de `time_now_us()` était 4 fois trop petite (le BSP définit `COUNTS_PER_SECOND` sans
+parenthèses, donc `a / COUNTS_PER_SECOND` devenait `a / fréquence / 2`). Le temps réel est environ
+4 fois plus grand (~4900 µs, soit ~5,7 cycles par MAC). Le code est corrigé ; la valeur exacte est à
+remesurer après reconstruction. La précision (98 %) et le débit global ne sont pas concernés.
 
 Le temps d'inférence est mesuré sur la carte (horloge globale du Cortex-A9), transfert UART exclu :
 c'est la référence logicielle pour la phase 2. Le débit global, lui, est limité par l'UART
