@@ -107,7 +107,7 @@
         .busy_in(busy),
         .done_in(done)
 	);
-
+/*
 // Instantiation of Axi Bus Interface IN_DMA_AXI
 	ip_q7_mac8_slave_stream_v1_0_IN_DMA_AXI # ( 
 		.C_S_AXIS_TDATA_WIDTH(C_IN_DMA_AXI_TDATA_WIDTH)
@@ -134,7 +134,7 @@
 		.M_AXIS_TLAST(out_axi_tlast),
 		.M_AXIS_TREADY(out_axi_tready)
 	);
-
+*/
 	// Add user logic here
 
     core core_inst (
