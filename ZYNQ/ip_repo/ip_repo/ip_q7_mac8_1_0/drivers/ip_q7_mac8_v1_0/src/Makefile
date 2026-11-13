@@ -9,9 +9,9 @@ RELEASEDIR=../../../lib
 INCLUDEDIR=../../../include
 INCLUDES=-I./. -I${INCLUDEDIR}
 
-INCLUDEFILES=$(wildcard *.h)
-LIBSOURCES=$(wildcard *.c)
-OUTS = $(wildcard *.o)
+INCLUDEFILES=ip_q7_mac8.h
+ LIBSOURCES=ip_q7_mac8.c led_ip_selftest.c
+ OUTS=ip_q7_mac8.o led_ip_selftest.o
 
 libs:
 	echo "Compiling ip_q7_mac8..."
